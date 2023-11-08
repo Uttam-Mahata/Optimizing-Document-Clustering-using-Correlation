@@ -86,15 +86,15 @@ if __name__ == "__main__":
     data = pd.read_csv("new.csv")
     
     # Constants
-    Threshold_value = 0.08
+    Threshold_value = 0.05
 
     # Make Output_folder
-    make_folder("Output")
+    make_folder("Output0.05")
 
     # Correlation coefficients
     correlation_matrix = data.corr()
     header = tuple(correlation_matrix.columns)
-    correlation_matrix.to_csv("Output/output.csv")  # Save the output.csv in the "Output" folder
+    correlation_matrix.to_csv("Output0.05/output.csv")  # Save the output.csv in the "Output" folder
 
     common_fields = get_relatable_fields(correlation_matrix, header)
     # print(*common_fields.items(),sep='\n')
@@ -107,7 +107,7 @@ if __name__ == "__main__":
         if max1 == 0:
             break
         common_fields[rel_pair[0]] = common_fields[rel_pair[0]].union(common_fields.pop(rel_pair[1]))
-        pd.Series(common_fields).to_csv(f"Output/file{c}.csv")  # Save the output files in the "Output" folder
+        pd.Series(common_fields).to_csv(f"Output0.05/file{c}.csv")  # Save the output files in the "Output" folder
 
     print(*common_fields.items(),sep='\n\n')
 
