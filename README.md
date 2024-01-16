@@ -9,7 +9,7 @@ This Python script optimizes document clustering using correlation-based cluster
 Make sure you have the necessary Python packages installed:
 
 ```bash
-pip install pandas numpy scikit-learn matplotlib nltk
+pip install pandas numpy scikit-learn matplotlib nltk ```
 
 
 ## Usage
